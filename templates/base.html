@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'estilo.css' %}">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body class="text-light">
+    <header>
+        <div class="logo">
+            <h2>My Portfolio</h2>
+        </div>
+        <nav class="navbar">
+            <ul class="lista">
+                <li class="lista-item"><a href="#">Home</a></li>
+                <li class="lista-item"><a href="#">Projects</a></li>
+                <li class="lista-item"><a href="#">Skills</a></li>
+                <li class="lista-item"><a href="#">About Me</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="banner">
+            <h2>Hello, I'm Domingos Cesar</h2>
+            <h4>Software Developer</h4>
+            <ul class="lista-banner">
+                <li class="banner-lista-item"><a href="#">Facebook</a></li>
+                <li class="banner-lista-item"><a href="#">Linkedin</a></li>
+                <li class="banner-lista-item"><a href="#">GitHub</a></li>
+            </ul>
+            <a href="{{ user.cv.url }}" id="btn_cv" target="_blank">Download CV</a>
+        </section>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ request.user.username }}{% endblock title %}
+
+{% block content %}
+    <section class="about">
+       {% if user %}
+       <h3>About Me</h3>
+                <div class="personal-data">
+                    <div class="apresentation">
+                        <h1>{{ user.first_name }} {{ user.last_name }}</h1>
+                        <p>
+                            {{ user.about }}
+                        </p>
+                        <a href="#" id="btn_profile">View Profile</a>
+                    </div>
+                    <div class="profile">
+                        <img src="{{ user.profile.url }}" alt="{{ user.username }}" id="profile">
+                    </div>
+                </div>
+       {% endif %}
+    </section>
+
+    <section class="skill">
+            <h3 >Tech Skills</h3>
+            {% if skills %}
+                <div class="tech">
+                    <div class="type">
+                        <h4>Front-End</h4>
+                        <div class="tech-item">
+                            {% for skill in skills %}
+                                {% if skill.types == 'Front-end' %}
+                                    <span>{{ skill.name }}</span>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="type">
+                        <h4>Back-End</h4>
+                        <div class="tech-item">
+                            {% for skill in skills %}
+                                {% if skill.types == 'Back-end' %}
+                                    <span>{{ skill.name }}</span>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="type">
+                        <h4>Desktop</h4>
+                        <div class="tech-item">
+                            {% for skill in skills %}
+                                {% if skill.types == 'Desktop' %}
+                                    <span>{{ skill.name }}</span>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="type">
+                        <h4>AI/ML</h4>
+                        <div class="tech-item">
+                            {% for skill in skills %}
+                                {% if skill.types == 'AI/ML' %}
+                                    <span>{{ skill.name }}</span>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="type">
+                        <h4>CI/CD</h4>
+                        <div class="tech-item">
+                            {% for skill in skills %}
+                                {% if skill.types == 'CI/CD' %}
+                                    <span>{{ skill.name }}</span>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="type">
+                        <h4>UI/UX</h4>
+                        <div class="tech-item">
+                            {% for skill in skills %}
+                                {% if skill.types == 'UI/UX' %}
+                                    <span>{{ skill.name }}</span>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+    </section>
+
+    <section class="projects">
+            <h3>Projects</h3>
+            {% if projects %}
+                <div class="projects-card">
+                    {% for project in projects %}
+                        <div class="card">
+                            <div class="image">
+                                <img src="{{ project.image.url }}">
+                            </div>
+                            <div class="datas">
+                                <span>{{ project.name }}</span>
+                                <a href="{{ project.github }}" target="_blank">GitHub</a>
+                            </div>
+                            <span id="techs">{{ project.techs }}</span>
+                        </div>
+                    {% endfor %}
+                </div>
+                <article>
+                    <a href="#" id="see_more">See More</a>
+                </article>
+            {% else %}
+                <span>Nao exite projectos</span>
+            {% endif %}
+        
+    </section>
+{% endblock content %}
