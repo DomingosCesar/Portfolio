@@ -9,11 +9,11 @@ header{
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: 100vw;
     position: fixed;
     top: 0px;
     padding: 15px 12px;
-    background-color: #1e1e1e;
+    background-color: #1e1e1e; /* 1e1e1e */
     color: #d9d9d9;
 }
 
@@ -40,7 +40,7 @@ header{
 
 /* container */
 .container{
-    margin-top: 55px;
+    margin-top: 52px;
     width: 100%;
 }
 
@@ -48,7 +48,9 @@ header{
 .banner{
     width: 100%;
     height: 100vh;
-    background: url("banner/banner.jpeg") no-repeat;
+    background: url("banner/banner2.jpeg") no-repeat;
+    background-size: cover; 
+    background-position: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -120,50 +122,133 @@ header{
 .about .personal-data .profile img{
     border-radius: 3px;
 }
+/* Skills */
+.skill{
+    background-color: #d9d9d9;
+    width: 100%;
+    height: auto;
+    padding: 20px 15px;
+    color: #1e1e1e;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.skill h3{
+    margin-bottom: 10px;
+}
+.skill .tech{
+    display: flex;
+    flex-direction: column;
 
+}
+.skill .tech .type{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.skill .tech .type .tech-item{
+    display: flex;
+    flex-direction: row;
+    padding: 10px 0 10px 15px;
+    margin: 0 0 0 100px;
+}
+.skill .tech .type .tech-item span{
+    margin: 0 5px;
+    padding: 5px 8px;
+    border-radius: 2px;
+    background-color: #1e1e1e;
+    color: #d9d9d9;
+}
+
+/* Projects */
+.projects{
+    width: 100%;
+    height: auto;
+    background-color: #1e1e1e;
+    color: #d9d9d9;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px 15px;
+}
+.projects .projects-card{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.projects .projects-card .card{
+    background-color: #d9d9d9;
+    color: #1e1e1e;
+    width: 300px;
+    height: 300px;
+    margin: 25px 15px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    
+}
+.projects .projects-card .card .image{
+    width: 100%;
+    height: 200px;
+}
+.projects .projects-card .card image{
+    width: 100%;
+    height: 100%;
+}
+.projects .projects-card .card .datas{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+}
+.projects .projects-card .card .datas a{
+    text-decoration: none;
+    color: #1e1e1e;
+}
+.projects .projects-card .card #techs{
+    margin: 10px 15px;
+}
+.projects article{
+    text-align: center;
+    margin: 25px 0;
+}
+.projects #see_more{
+    color: #d9d9d9;
+    text-decoration: none;
+    padding: 7px 15px;
+    background-color: #1275b1;
+    border-radius: 3px;
+}
 /* media query */
 @media only screen and (max-width: 950px) {
     header {
         height: 8vh;
-        width: 100%;
         position: fixed;
+        top: 0;
     }
 
     .logo {
         font-size: 5vw;
         margin-left: 1em;
     }
-    /* .nav-container {
-        width: 100vw;
-        height: 7vh;
-        display: grid;
-        grid-template-columns: auto auto auto auto auto auto;
-        align-items: center;
-        position: fixed;
-        bottom: 0;
-        border-top: 0.5px solid #212529;
-        background-color: var(--dark-color);
+    .container{
+        margin-top: 50px;
+        width: 100%;
     }
-    .nav-container nav {
+    .about{
+        width: 100%;
+        height: auto;
         display: flex;
+        flex-direction: column;
     }
-    .nav-container nav ul {
-        width: 100vw;
-        display: flex;
+    .about .personal-data{
+        flex-direction: column-reverse;
+        justify-content: center;
         align-items: center;
-        justify-content: space-between;
+    }
+    .about .personal-data .apresentation{
         margin: 0;
-        padding: 0;
-        list-style: none;
+        padding: 2px;
     }
-    .nav-container nav li {
-        margin: 1em;
+    .about .personal-data .profile{
+        margin-bottom: 10px;
     }
-    .nav-container nav a {
-        font-size: 1.9vw;
-        color: white;
-        text-decoration: none;
-        text-transform: uppercase;
-        transition: .3s;
-    } */
 }
