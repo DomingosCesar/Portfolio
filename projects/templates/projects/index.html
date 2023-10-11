@@ -7,16 +7,19 @@
        {% if user %}
        <h3>About Me</h3>
                 <div class="personal-data">
-                    <div class="apresentation">
-                        <h1>{{ user.first_name }} {{ user.last_name }}</h1>
-                        <p>
-                            {{ user.about }}
-                        </p>
-                        <a href="#" id="btn_profile">View Profile</a>
-                    </div>
-                    <div class="profile">
-                        <img src="{{ user.profile.url }}" alt="{{ user.username }}" id="profile">
-                    </div>
+                    {% for user in users %}
+                        <div class="apresentation">
+                            <h1>{{ user.first_name }} {{ user.last_name }}</h1>
+                            <p>
+                                {{ user.about }}
+                            </p>
+                            <a href="#" id="btn_profile">View Profile</a>
+                        </div>
+                        <div class="profile">
+                            <img src="{{ user.profile.url }}" alt="{{ user.username }}" id="profile">
+                        </div>
+                    {% endfor %}
+                    
                 </div>
        {% endif %}
     </section>
