@@ -13,8 +13,8 @@ SECRET_KEY = 'django-insecure-ubs1-$%-tje_tdy-51%enp1)3ts!h)k+if&(fjj$-bzm*)3al=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = ['*']
-ALLOWED_HOSTS = ["DomingosCesar.pythonanywhere.com"]
+ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = ["DomingosCesar.pythonanywhere.com"]
 
 
 # Application definition
@@ -41,26 +41,10 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'Portfolio.urls'
 
-# TEMPLATES = [
-#     {
-#         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-#         'DIRS': [BASE_DIR.joinpath('templates')],
-#         'APP_DIRS': True,
-#         'OPTIONS': {
-#             'context_processors': [
-#                 'django.template.context_processors.debug',
-#                 'django.template.context_processors.request',
-#                 'django.contrib.auth.context_processors.auth',
-#                 'django.contrib.messages.context_processors.messages',
-#             ],
-#         },
-#     },
-# ]
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['Portfolio/templates'],
+        'DIRS': [BASE_DIR.joinpath('templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -72,6 +56,22 @@ TEMPLATES = [
         },
     },
 ]
+
+# TEMPLATES = [
+#     {
+#         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+#         'DIRS': ['Portfolio/templates'],
+#         'APP_DIRS': True,
+#         'OPTIONS': {
+#             'context_processors': [
+#                 'django.template.context_processors.debug',
+#                 'django.template.context_processors.request',
+#                 'django.contrib.auth.context_processors.auth',
+#                 'django.contrib.messages.context_processors.messages',
+#             ],
+#         },
+#     },
+# ]
 
 WSGI_APPLICATION = 'Portfolio.wsgi.application'
 
@@ -121,16 +121,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-# STATIC_URL = 'static/'
-# # STATIC_ROOT = BASE_DIR.joinpath('static/')
-# STATICFILES_DIRS = [BASE_DIR.joinpath('static/')]
+STATIC_URL = 'static/'
+# STATIC_ROOT = BASE_DIR.joinpath('static/')
+STATICFILES_DIRS = [BASE_DIR.joinpath('static/')]
 
-# MEDIA_URL = '/media/'
-# MEDIA_ROOT = BASE_DIR.joinpath('media/')
-MEDIA_ROOT = '/home/DomingosCesar/Portfolio/media'
 MEDIA_URL = '/media/'
-STATIC_ROOT = '/home/DomingosCesar/Portfolio/static'
-STATIC_URL = '/static/'
+MEDIA_ROOT = BASE_DIR.joinpath('media/')
+# MEDIA_ROOT = '/home/DomingosCesar/Portfolio/media'
+# MEDIA_URL = '/media/'
+# STATIC_ROOT = '/home/DomingosCesar/Portfolio/static'
+# STATIC_URL = '/static/'
 
 AUTH_USER_MODEL = "projects.User" 
 
