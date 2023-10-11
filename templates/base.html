@@ -9,10 +9,12 @@
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body class="text-light">
-    <header>
+    <header class="head">
         <div class="logo">
             <h2>My Portfolio</h2>
         </div>
+        <span class="bar">|||</span>
+        <span class="Xbar">X</span>
         <nav class="navbar">
             <ul class="lista">
                 <li class="lista-item"><a href="#">Home</a></li>
@@ -37,5 +39,19 @@
         {% block content %}
         {% endblock %}
     </main>
+    <footer>
+        <section class="media">
+            <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Telegram</a></li>
+                <li><a href="#">WhatsApp</a></li>
+                <li><a href="#">GitHub</a></li>
+            </ul>
+        </section>
+        <p>
+            CopyRight &copy; Domingos Cesar <span id="date"><script> d = new Date();  document.querySelector('#date').textContent = d.getFullYear();</script></span>
+        </p>
+    </footer>
+    <script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>
