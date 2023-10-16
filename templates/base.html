@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"> -->
     <link rel="stylesheet" href='{% static "css/estilo.css" %}'>
+    <link rel="stylesheet" href='{% static "phosphorIcons/regular/style.css" %}'>
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body class="text-light">
@@ -30,9 +30,9 @@
             <h2>Hello, I'm Domingos Cesar</h2>
             <h4>Software Developer</h4>
             <ul class="lista-banner">
-                <li class="banner-lista-item"><a href="#">Facebook</a></li>
-                <li class="banner-lista-item"><a href="#">Linkedin</a></li>
-                <li class="banner-lista-item"><a href="#">GitHub</a></li>
+                <li class="banner-lista-item"><a href="#"><i class="ph ph-instagram-logo"></i></a></li>
+                <li class="banner-lista-item"><a href="#"><i class="ph ph-linkedin-logo"></i></a></li>
+                <li class="banner-lista-item"><a href="#"><i class="ph ph-github-logo"></i></a></li>
             </ul>
             <a href="{{ user.cv.url }}" id="btn_cv" target="_blank">Download CV</a>
         </section>
@@ -42,10 +42,10 @@
     <footer>
         <section class="media">
             <ul>
-                <li><a href="#">Facebook</a></li>
-                <li><a href="#">Telegram</a></li>
-                <li><a href="#">WhatsApp</a></li>
-                <li><a href="#">GitHub</a></li>
+                <li><a href="#"><i class="ph ph-facebook-logo"></i></a></li>
+                <li><a href="#"><i class="ph ph-telegram-logo"></i></a></li>
+                <li><a href="#"><i class="ph ph-whatsapp-logo"></i></a></li>
+                <li><a href="#"><i class="ph ph-github-logo"></i></a></li>
             </ul>
         </section>
         <p>

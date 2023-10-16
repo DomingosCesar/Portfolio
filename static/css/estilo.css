@@ -74,6 +74,10 @@ header span{
     text-decoration: none;
     color: #d9d9d9;
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 28px;
+}
+.banner .lista-banner .banner-lista-item a:hover i{
+    color: #ee0909;
 }
 .banner #btn_cv{
     color: #d9d9d9;
@@ -293,8 +297,7 @@ header span{
 .projects .container .card .content a{
     position: relative;
     display: inline-block;
-    padding: 8px 20px;
-    margin-top: 15px;
+    padding: 2px 18px;
     background: #fff;
     color: #000;
     text-decoration: none;
@@ -340,7 +343,10 @@ footer .media ul li{
 footer .media ul li a{
     text-decoration: none;
     color: #d9d9d9;
-    font-size: 14px;
+    font-size: 22px;
+}
+footer .media ul li a:hover i{
+    color: #ee0909;
 }
 footer p{
     font-size: 12px;
