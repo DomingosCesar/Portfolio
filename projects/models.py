@@ -28,7 +28,7 @@ class User(AbstractUser):
 class Project(models.Model):
     
     name = models.CharField(max_length = 30, unique = True)
-    description = models.TextField()
+    description = models.CharField(max_length=200)
     image = models.ImageField(upload_to = 'project_images')
     link = models.URLField()
     github = models.URLField(null=True)
