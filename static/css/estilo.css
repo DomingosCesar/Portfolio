@@ -176,45 +176,7 @@ header span{
     font-family: Arial, Helvetica, sans-serif;
     padding: 20px 15px;
 }
- /*
-.projects .projects-card{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-.projects .projects-card .card{
-    background-color: #d9d9d9;
-    color: #1e1e1e;
-    width: 300px;
-    height: 300px;
-    margin: 25px 15px;
-    display: flex;
-    flex-direction: column;
-    border-radius: 5px;
-    
-}
-.projects .projects-card .card .image{
-    width: 100%;
-    height: 200px;
-}
-.projects .projects-card .card image{
-    width: 100%;
-    height: 100%;
-}
-.projects .projects-card .card .datas{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 15px;
-}
-.projects .projects-card .card .datas a{
-    text-decoration: none;
-    color: #1e1e1e;
-}
-.projects .projects-card .card #techs{
-    margin: 10px 15px;
-}*/
+ 
 .projects article{
     text-align: center;
     margin: 25px 0;
@@ -270,7 +232,7 @@ header span{
     display: flex;
     justify-content: center;
     gap: 5px 50px;
-    margin: 5px 0;
+    margin: 10px 0;
 }
 .projects .container .card:hover .content{
     transform: translateY(0px);
@@ -293,6 +255,7 @@ header span{
     font-size: .8em;
     color: #fff;
     font-weight: 300;
+    margin-bottom: 8px;
 }
 .projects .container .card .content a{
     position: relative;
@@ -316,6 +279,14 @@ header span{
     filter: blur(0);
     transform: translateX(0);
     transition: all 1s;
+}
+
+.see_more_hidden{
+    opacity: 0;
+}
+
+.see_more_show{
+    opacity: 1;
 }
 
 
@@ -359,6 +330,7 @@ footer p{
         position: fixed;
         top: 0;
         height: auto;
+        z-index: 1;
     }
     header .navbar{
         display: none;
@@ -370,11 +342,11 @@ footer p{
     header .bar{
         display: flex;
         font-size: 25px;
-        transition: .10s ease-in;
+        transition: 2s ease-in;
     }
     header .Xbar{
         font-size: 25px;
-        transition: .10s ease-out;
+        transition: 2s ease-out;
     }
     .logo {
         font-size: 5vw;
@@ -421,12 +393,6 @@ footer p{
         z-index: 0;
     }
     
-    /* .projects .projects-card .card{
-        margin: 8px 5px 8px 0px;
-        justify-content: center;
-        width: 300px;
-        height: 300px;
-    } */
     footer{
         background-color: #1e1e1e;
         color: #d9d9d9;

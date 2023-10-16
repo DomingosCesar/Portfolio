@@ -1,11 +1,9 @@
-console.log("ola");
-
 // bar, navbar, head
 const head = document.querySelector('.head');
 var navbar = document.querySelector('.navbar');
 var bar = document.querySelector('.bar');
 var xbar = document.querySelector('.Xbar');
-
+console.log(bar)
 bar.addEventListener('click', ()=>{
     navbar.style.display = 'flex';
     bar.style.display = 'none';
@@ -21,7 +19,7 @@ xbar.addEventListener('click', ()=>{
 // O IntersectionObserver serve para observar intens na tela, diz quendo e que esses itens estao visiveis quando se faz o scrooll.
 const myObserver = new IntersectionObserver((entries) =>{
     entries.forEach((entry)=>{
-        console.log(entries)
+        // console.log(entries)
         if(entry.isIntersecting){
             entry.target.classList.add('show');
         }
@@ -80,3 +78,18 @@ function smoothScrollTo(endX, endY, duration){
 
     }, 1000 / 60 );
 }
+
+// counting card
+var card_number = document.querySelectorAll('.card');
+var btn_see_more = document.querySelector('.btn_see');
+
+function counting_card(){
+    if(card_number.length < 4){
+        btn_see_more.className  = "see_more_hidden";
+    }
+    else if(card_number.length > 4){
+        btn_see_more.className = "see_more_show"
+    }
+}
+
+counting_card();
