@@ -30,7 +30,7 @@ class Project(models.Model):
     name = models.CharField(max_length = 30, unique = True)
     description = models.CharField(max_length=200)
     image = models.ImageField(upload_to = 'project_images')
-    link = models.URLField()
+    link = models.URLField(null=True)
     github = models.URLField(null=True)
     level = models.CharField(max_length = 10, choices = (("basic", "B"), ("destaque", "D")))
     techs = models.CharField(max_length = 300)

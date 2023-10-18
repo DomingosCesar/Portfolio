@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ us }}/Projects{% endblock title %}
+
+{% block content %}
+    <section class="projects hidden" id="project">
+        <h3>Projects</h3>
+        {% if projects %}
+            <div class="container">
+                {% for project in projects %}
+                <div class="card hidden">
+                    <div class="content">
+                        <img src="{{ project.image.url }}">
+                        <div class="name">
+                            <h3>{{project.name}}</h3>
+                            <a href="{{ project.github }}" target="_blank">github</a>
+                        </div>
+                        <span>{{ project.techs }}</span>
+                        <p>
+                            {{ project.description }}
+                        </p>
+                        <a href="#">Mais Informacoes</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <span>Nao exite projectos</span>
+        {% endif %}
+
+    </section>
+{% endblock %}

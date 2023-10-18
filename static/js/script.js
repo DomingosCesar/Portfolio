@@ -84,12 +84,28 @@ var card_number = document.querySelectorAll('.card');
 var btn_see_more = document.querySelector('.btn_see');
 
 function counting_card(){
-    if(card_number.length < 4){
+    if(card_number.length <= 4){
         btn_see_more.className  = "see_more_hidden";
     }
-    else if(card_number.length > 4){
+    else{
         btn_see_more.className = "see_more_show"
     }
 }
 
 counting_card();
+console.log(card_number.length);
+
+// Modal
+
+// const openModal = document.querySelector('#open-modal');
+// const closeModal = document.querySelector('#close-modal');
+// const modal = document.querySelectorAll('.modal');
+// const fade = document.querySelector('#fade');
+
+// const toggleModal = () =>{
+//     [modal[1], fade].forEach((el) => el.classList.toggle("hide"));
+// }
+
+// [openModal, closeModal[0], fade].forEach((el)=>{
+//     el.addEventListener('click', ()=> toggleModal())
+// })

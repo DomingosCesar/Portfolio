@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}{{ request.user.username }}{% endblock title %}
+{% block title %}{{ us }}{% endblock title %}
 
 {% block content %}
     <section class="about" id="about">
@@ -104,20 +104,34 @@
                                 <h3>{{project.name}}</h3>
                                 <a href="{{ project.github }}" target="_blank">github</a>
                             </div>
+                            <span>{{ project.techs }}</span>
                             <p>
-                                Lorem ipsum dolor sit amet consectetur 
-                                adipisicing elit. Accusamus sequi, delectus 
-                                hic numquam id nostrum modi temporibus sed 
-                                aliquam commodi beatae porro deleniti at 
-                                asperiores optio ratione maxime facilis minus.
+                                {{ project.description }}
                             </p>
-                            <a href="#">Mais Informacoes</a>
+                            <button id="open-modal">Mais Informacoes</button>
                         </div>
                     </div>
+                    <!-- <div id="fade" class="hide"></div> -->
+                    <!-- <div id="modal" class="modal hide">
+                        <div class="modal-header">
+                            <h2>{{project.name}}</h2>
+                            <button id="close-modal">Close</button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="{{ project.image.url }}">
+                            <a href="{{ project.github }}"><i class="ph ph-github-logo"></i></a>
+                            <span>{{ project.techs }}</span>
+                            <span>{{ project.types }}</span>
+                            <span>{{ project.owner }}</span>
+                             <p>
+                                {{ project.description }}
+                             </p>
+                        </div>
+                    </div> -->
                     {% endfor %}
                 </div>
                 <article class="btn_see">
-                    <a href="#" id="see_more">See More</a>
+                    <a href="{% url 'project' %}" id="see_more">See More</a>
                 </article>
             {% else %}
                 <span>Nao exite projectos</span>
