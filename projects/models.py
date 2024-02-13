@@ -5,32 +5,39 @@ from PIL import Image
 
 
 class User(AbstractUser):
-    profile = models.ImageField(upload_to='profile/', null=True)
     about = models.TextField(null = False)
-    cv = models.FileField(upload_to='profile/', null=True)
     
     def __str__(self) -> str:
         return self.username
     
+class Profile(models.Model):
+    image = models.ImageField(upload_to='profile/', null=True, blank=True)
+    cv = models.FileField(upload_to='cvs/', null=True, blank=True)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete = models.CASCADE)
+    
     IMAGE_MAX_SIZE = (300, 300)
 
     def resize_image(self):
-        image = Image.open(self.profile)
+        image = Image.open(self.image)
         image.thumbnail(self.IMAGE_MAX_SIZE)
         # save the resized image to the file system
         # this is not the model save method!
-        image.save(self.profile.path)
+        image.save(self.image.path)
         
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
         self.resize_image()
+    
+    def __str__(self) -> str:
+        return self.user.username
+    
     
 class Project(models.Model):
     
     name = models.CharField(max_length = 30, unique = True)
     description = models.CharField(max_length=200)
     image = models.ImageField(upload_to = 'project_images')
-    link = models.URLField(null=True)
+    link = models.URLField(null=True, blank=True)
     github = models.URLField(null=True)
     level = models.CharField(max_length = 10, choices = (("basic", "B"), ("destaque", "D")))
     techs = models.CharField(max_length = 300)
@@ -65,7 +72,7 @@ class Skill(models.Model):
     Types_choice = (
         ("Front-end", "F"), ("Back-end", "B"),
         ("Desktop", "D"), ("AI/ML", "ML"),
-        ("CI/CD", "CC"), ("UI/UX", "U"),
+        ("UI/UX", "U"), ("other", "O"),
         )
     name = models.CharField(max_length = 30, unique = True)
     types = models.CharField(max_length = 10, choices = Types_choice)

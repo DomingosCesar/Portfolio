@@ -79,11 +79,32 @@ WSGI_APPLICATION = 'Portfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+# Connecting with postgres database
 DATABASES = {
+
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+
+        'ENGINE': 'django.db.backends.postgresql',
+
+        'NAME': 'Portfolio',
+
+        'USER': 'postgres',
+
+        'PASSWORD': 'DomingosCesar@99',
+
+        #'HOST': '<db_hostname_or_ip>',
+
+        'PORT': 5432,
+
     }
+
 }
 
 
@@ -120,11 +141,12 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
+import os
 
 STATIC_URL = 'static/'
 # STATIC_ROOT = BASE_DIR.joinpath('static/')
-STATICFILES_DIRS = [BASE_DIR.joinpath('static/')]
-STATIC_ROOT = BASE_DIR.joinpath('staticfiles/')
+STATICFILES_DIRS =  (os.path.join(BASE_DIR, "staticfiles"), )
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR.joinpath('media/')

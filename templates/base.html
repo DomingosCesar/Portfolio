@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href='{% static "css/estilo.css" %}'>
     <link rel="stylesheet" href='{% static "phosphorIcons/regular/style.css" %}'>
+    <link rel="shortcut icon" href="{% block img %}{% endblock %}" type="image/x-icon">
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body class="text-light">
@@ -27,14 +28,14 @@
 
     <main class="container">
         <section class="banner" id="banner">
-            <h2>Hello, I'm Domingos Cesar</h2>
+            <h2>Hello, I'm {{us.user.first_name}} {{us.user.last_name}}</h2>
             <h4>Software Developer</h4>
             <ul class="lista-banner">
                 <li class="banner-lista-item"><a href="#"><i class="ph ph-instagram-logo"></i></a></li>
                 <li class="banner-lista-item"><a href="#"><i class="ph ph-linkedin-logo"></i></a></li>
                 <li class="banner-lista-item"><a href="#"><i class="ph ph-github-logo"></i></a></li>
             </ul>
-            <a href="{{ user.cv.url }}" id="btn_cv" target="_blank">Download CV</a>
+            <a href="{{ us.cv.url }}" id="btn_cv" target="_blank">Download CV</a>
         </section>
         {% block content %}
         {% endblock %}

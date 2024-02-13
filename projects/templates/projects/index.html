@@ -1,27 +1,31 @@
 {% extends 'base.html' %}
 
+{% block img %}{{ us.image.url}}{% endblock img %}
 {% block title %}{{ us }}{% endblock title %}
 
 {% block content %}
     <section class="about" id="about">
-       {% if user %}
+       {% if profiles %}
        <h3>About Me</h3>
-                <div class="personal-data hidden">
-                    {% for user in users %}
+            <div class="personal-data hidden">
+                {% for profile in profiles %}
+                    {% if profile.id == us.id %}
                         <div class="apresentation">
-                            <h1>{{ user.first_name }} {{ user.last_name }}</h1>
-                            <p>
-                                {{ user.about }}
-                            </p>
-                            <a href="#" id="btn_profile">View Profile</a>
-                        </div>
-                        <div class="profile">
-                            <img src="{{ user.profile.url }}" alt="{{ user.username }}" id="profile">
-                        </div>
-                    {% endfor %}
-                    
-                </div>
-       {% endif %}
+                                <h1>{{ profile.user.first_name }} {{ profile.user.last_name }}</h1>
+                                <p>
+                                    {{ profile.user.about }}
+                                </p>
+                                <a href="#" id="btn_profile">View Profile</a>
+                            </div>
+                            <div class="profile">
+                                    <img src="{{ profile.image.url }}" alt="{{ profile.user.username }}" id="profile">
+                            </div>
+                    {% else %}
+                        <span>Profile not exist</span>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endif %}
     </section>
 
     <section class="skill hidden" id="skill">
@@ -63,16 +67,6 @@
                         <div class="tech-item">
                             {% for skill in skills %}
                                 {% if skill.types == 'AI/ML' %}
-                                    <span>{{ skill.name }}</span>
-                                {% endif %}
-                            {% endfor %}
-                        </div>
-                    </div>
-                    <div class="type">
-                        <h4>CI/CD</h4>
-                        <div class="tech-item">
-                            {% for skill in skills %}
-                                {% if skill.types == 'CI/CD' %}
                                     <span>{{ skill.name }}</span>
                                 {% endif %}
                             {% endfor %}
