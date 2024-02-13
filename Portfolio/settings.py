@@ -79,15 +79,15 @@ WSGI_APPLICATION = 'Portfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+DATABASES = {
+     'default': {
+         'ENGINE': 'django.db.backends.sqlite3',
+         'NAME': BASE_DIR / 'db.sqlite3',
+     }
+}
 
 # Connecting with postgres database
-DATABASES = {
+'''DATABASES = {
 
     'default': {
 
@@ -105,7 +105,7 @@ DATABASES = {
 
     }
 
-}
+}'''
 
 
 # Password validation
@@ -144,8 +144,8 @@ USE_TZ = True
 import os
 
 STATIC_URL = 'static/'
-# STATIC_ROOT = BASE_DIR.joinpath('static/')
-STATICFILES_DIRS =  (os.path.join(BASE_DIR, "staticfiles"), )
+STATIC_ROOT = BASE_DIR.joinpath('static/')
+# STATICFILES_DIRS =  (os.path.join(BASE_DIR, "static"), )
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 MEDIA_URL = '/media/'
