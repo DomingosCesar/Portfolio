@@ -5,7 +5,7 @@ def index(request):
     skills = models.Skill.objects.all()
     projects = models.Project.objects.all()
     profile = models.Profile.objects.all()
-    us = models.Profile.objects.get(user = 2)
+    us = models.Profile.objects.get(user = 1)
     print(us.user)
     return render(request, 'projects/index.html', context = {
         "skills" : skills,
